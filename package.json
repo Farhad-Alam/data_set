@@ -7,9 +7,10 @@
   "main": "server/server.js",
   "type": "module",
   "scripts": {
-    "build": "cd server && npm install  && cd ../client && npm install && npm run build",
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "start": "node ./server/server.js",
+    "server": "nodemon ./server/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm start\" \"npm run client\" "
   },
   "author": "",
   "license": "ISC",
